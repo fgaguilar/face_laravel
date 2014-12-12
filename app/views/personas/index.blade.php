@@ -1,0 +1,1 @@
+C:\wamp\www\laravel\app/views/personas/index.blade.php
