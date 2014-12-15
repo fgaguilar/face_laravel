@@ -16,17 +16,13 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get("/home", function()
+Route::group(array('prefix' => 'api'), function()
 {
-    return "hello";
+    Route::resource('planillas', 'PlanillaController');
 });
- 
-Route::get("getData", function()
+
+Route::get('planillas', function ()
 {
- 
-    $posts = DB::table("posts")->get();
-    return Response::json(array(
-        "posts"        =>        $posts
-    ));
- 
+	return "Vista planillas";
+    //return View::make('planillas.index');
 });
