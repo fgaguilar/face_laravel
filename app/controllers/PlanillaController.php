@@ -31,7 +31,9 @@ class PlanillaController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::all();
+		$Planilla = Planilla::create($input);
+		return Response::json($Planilla);
 	}
 
 
