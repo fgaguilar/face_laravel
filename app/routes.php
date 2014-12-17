@@ -26,3 +26,14 @@ Route::get('planillas', function ()
 	return "Vista planillas";
     //return View::make('planillas.index');
 });
+
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('planes', 'PlanesController');
+});
+
+Route::get('planes', function ()
+{
+	return "Vista planes";
+    //return View::make('planillas.index');
+});
