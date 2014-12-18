@@ -18,22 +18,12 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api'), function()
 {
-    Route::resource('planillas', 'PlanillaController');
-});
-
-Route::get('planillas', function ()
-{
-	return "Vista planillas";
-    //return View::make('planillas.index');
+    Route::resource('planillas', 'PlanillaController',
+      ['only'=>['index','store','show','update','destroy']]);
 });
 
 Route::group(array('prefix' => 'api'), function()
 {
-    Route::resource('planes', 'PlanesController');
-});
-
-Route::get('planes', function ()
-{
-	return "Vista planes";
-    //return View::make('planillas.index');
+    Route::resource('plans', 'planController',
+      ['only'=>['index','store','show','update','destroy']]);
 });
