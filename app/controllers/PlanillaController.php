@@ -45,7 +45,8 @@ class PlanillaController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$node = Planilla::find($id);
+		return Response::json($node);
 	}
 
 
@@ -69,7 +70,9 @@ class PlanillaController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$input = Input::all();
+		$node = Planilla::find($id)->update($input);
+		return Response::json($node);
 	}
 
 
@@ -81,7 +84,8 @@ class PlanillaController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$node = Planilla::destroy($id);
+		return Response::json($node);
 	}
 
 
