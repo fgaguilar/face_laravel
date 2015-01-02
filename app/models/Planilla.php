@@ -42,6 +42,8 @@ class Planilla extends \Eloquent {
       'impuestoAgAlicuota',
       'impuestoAgSus',
       'impuestoTotalSusSus',
-      'impuestoTotalBsSus'
+      'impuestoTotalBsSus',
+      'puertoDestino',
+      'paisDestino'
     );
 }

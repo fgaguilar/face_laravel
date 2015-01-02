@@ -56,6 +56,8 @@ class CreatePlanillasTable extends Migration {
 		    $table->double('impuestoAgSus',15,2);
 		    $table->double('impuestoTotalSusSus',15,2);
 		    $table->double('impuestoTotalBsSus',15,2);
+		    $table->string('puertoDestino',50);
+		    $table->string('paisDestino');
 			$table->timestamps();
 		});
 	}
