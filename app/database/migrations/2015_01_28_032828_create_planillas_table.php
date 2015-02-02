@@ -15,6 +15,7 @@ class CreatePlanillasTable extends Migration {
 		Schema::create('planillas', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('planilla',10);
 			$table->double('pesoKilosNetosHumedosPeso',15,2);
 			$table->double('pesoKilosNetosHumedosFactores',15,7);
 			$table->double('pesoHumedadPesos',6,2);
@@ -57,7 +58,7 @@ class CreatePlanillasTable extends Migration {
 		    $table->double('impuestoTotalSusSus',15,2);
 		    $table->double('impuestoTotalBsSus',15,2);
 		    $table->string('puertoDestino',50);
-		    $table->string('paisDestino');
+		    $table->string('paisDestino',50);
 			$table->timestamps();
 		});
 	}

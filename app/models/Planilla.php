@@ -2,6 +2,7 @@
 
 class Planilla extends \Eloquent {
 	protected $fillable = array(
+      'planilla',
       'pesoKilosNetosHumedosPeso',
       'pesoKilosNetosHumedosFactores',
       'pesoHumedadPesos',

@@ -10,6 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+/*Event::listen('illuminate.query', function($query)
+{
+    var_dump($query);
+});*/
 
 Route::get('/', function()
 {
@@ -20,12 +24,14 @@ Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('planillas', 'PlanillaController',
       ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('planillasTipo', 'PlanillaTipoController',
+      ['only'=>['show']]);
 });
 
 Route::group(array('prefix' => 'api'), function()
 {
-    Route::resource('plans', 'planController',
-      ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('codigocontrol', 'CodigoControlController',
+      ['only'=>['show']]);
 });
 
 Route::get('reporte1', function()
