@@ -49,6 +49,7 @@ class PlanillaController extends \BaseController {
 		return Response::json($node);
 	}
 
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
