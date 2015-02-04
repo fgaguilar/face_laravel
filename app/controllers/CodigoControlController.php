@@ -35,7 +35,7 @@ class CodigoControlController extends \BaseController {
 		    '9rCB7Sv4X29d)5k7N%3ab89p-3(5[A'
 		    );
         $control=$CodigoControl->generar();
-        $controljson=
-        return Response::json($control);
+        $respuesta="{'control':'".$control."'}";
+        return Response::json($respuesta);
 	}
 }
