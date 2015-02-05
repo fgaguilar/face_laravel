@@ -34,6 +34,12 @@ Route::group(array('prefix' => 'api'), function()
       ['only'=>['show']]);
 });
 
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('facturas', 'FacturaController',
+      ['only'=>['index','store','show','update','destroy']]);
+});
+
 Route::get('reporte1', function()
 {
     $html = '<html><body>'

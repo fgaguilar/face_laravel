@@ -12,7 +12,7 @@ class CreatePlanillasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('planillas', function(Blueprint $table)
+		/*Schema::create('planillas', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('planilla',10);
@@ -60,7 +60,7 @@ class CreatePlanillasTable extends Migration {
 		    $table->string('puertoDestino',50);
 		    $table->string('paisDestino',50);
 			$table->timestamps();
-		});
+		});*/
 	}
 
 	/**
