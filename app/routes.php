@@ -40,6 +40,12 @@ Route::group(array('prefix' => 'api'), function()
       ['only'=>['index','store','show','update','destroy']]);
 });
 
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('parametros', 'ParametroController',
+      ['only'=>['index','store','show','update','destroy']]);
+});
+
 Route::get('reporte1', function()
 {
     $html = '<html><body>'
