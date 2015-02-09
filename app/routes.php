@@ -26,12 +26,8 @@ Route::group(array('prefix' => 'api'), function()
       ['only'=>['index','store','show','update','destroy']]);
     Route::resource('planillasTipo', 'PlanillaTipoController',
       ['only'=>['show']]);
-});
-
-Route::group(array('prefix' => 'api'), function()
-{
-    Route::resource('codigocontrol', 'CodigoControlController',
-      ['only'=>['show']]);
+    Route::resource('codigos', 'CodigoControlController',
+      ['only'=>['show']]);    
 });
 
 Route::group(array('prefix' => 'api'), function()

@@ -2,7 +2,6 @@
 require_once('codigoControl/codigo_control.class.php');
 
 class CodigoControlController extends \BaseController {
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -11,11 +10,61 @@ class CodigoControlController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		try{
+			$node = Planilla::find($id);
+
+			/*$autorizacion='29040011007';
+			$factura=$node->impuestoFacturaFactores;
+			$nit='3363812015';
+			$fecha=str_replace("-","",$node->pesoKilosNetosSecosFactores);
+			$monto=(integer)$node->impuestoTotalBsSus;
+			$CodigoControl = new CodigoControl(
+				$autorizacion,
+				$factura,
+				$nit,
+				$fecha,
+				$monto,
+				'9rCB7Sv4X29d)5k7N%3ab89p-3(5[A'
+			);*/
+			//$control=$CodigoControl->generar();
+
+
+			$CodigoControl = new CodigoControl(
+				'30040010595',
+				'10015',
+				'953387014',
+				'20070825',
+				'5726',
+				'33E265B43C4435sdTuyBVssD355FC4A6F46sdQWasdA)d56666fDsmp9846636B3'
+			);
+			$control=$CodigoControl->generar();
+			
+			$statusCode = 200;
+
+			$response = [
+			'id'  => $node->id,
+			'autorizacion' => $autorizacion,
+			'factura' => $factura,
+			'nit' => $nit,
+			'fecha' => $fecha,
+			'monto' => $monto
+			];
+		}catch (Exception $e){
+			$statusCode = 400;
+		}finally{
+			return Response::json($response, $statusCode);
+		}
+	}
+
+}
+
+	//public function show($id)
+	//{
 		//$dosificacion = Dosificacione::find($id);
-		$auto='29040011007';
-		$dosificacion = Dosificacione::where('autorizacion', $auto)->get();
-		//where('id', '=', 1)->get();
-		$node = Planilla::find($id);
+		//$auto='ZINC';
+		//$node = Planilla::where('planilla', $auto)->get();
+		//$dosificacion = Dosificacione::where('autorizacion', $auto)->get();
+		//$node = Planilla::find($id);
 		/*Buscar la informacion para la factura
 		NumeroAutorizacion='29040011007' constante
 	    NumeroFactura='1503' variable $node->impuestoFacturaFactores
@@ -42,6 +91,6 @@ class CodigoControlController extends \BaseController {
 		    );
         $control=$CodigoControl->generar();
         return Response::json($control);*/
-        return $dosificacion->id;
-	}
-}
+        //return $node->id;
+	//}
+//}
