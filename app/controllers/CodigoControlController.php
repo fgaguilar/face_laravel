@@ -11,6 +11,10 @@ class CodigoControlController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		//$dosificacion = Dosificacione::find($id);
+		$auto='29040011007';
+		$dosificacion = Dosificacione::where('autorizacion', $auto)->get();
+		//where('id', '=', 1)->get();
 		$node = Planilla::find($id);
 		/*Buscar la informacion para la factura
 		NumeroAutorizacion='29040011007' constante
@@ -21,7 +25,9 @@ class CodigoControlController extends \BaseController {
 	    Clave='9rCB7Sv4X29d)5k7N%3ab89p-3(5[A' constante
 		*/
 		// Ejemplo de generacion
-		$autorizacion='29040011007';
+		//$autorizacion=$dosificacion.autorizacion;
+
+		/*$autorizacion='29040011007';
 		$factura=$node->impuestoFacturaFactores;
         $nit='3363812015';
         $fecha=str_replace("-","",$node->pesoKilosNetosSecosFactores);
@@ -35,7 +41,7 @@ class CodigoControlController extends \BaseController {
 		    '9rCB7Sv4X29d)5k7N%3ab89p-3(5[A'
 		    );
         $control=$CodigoControl->generar();
-        $respuesta="{'control':'".$control."'}";
-        return Response::json($respuesta);
+        return Response::json($control);*/
+        return $dosificacion->id;
 	}
 }
