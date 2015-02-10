@@ -2,6 +2,32 @@
 require_once('codigoControl/codigo_control.class.php');
 
 class CodigoControlController extends \BaseController {
+
+	public function index()
+	{
+	    try{
+	        $statusCode = 200;
+	        $response = [
+	          'photos'  => []
+	        ];
+	 
+	        $photos = Planilla::all()->take(9);
+	 
+	        foreach($photos as $photo){
+	 
+	            $response['photos'][] = [
+	                'id' => $photo->id,
+	            ];
+	        }
+	 
+	    }catch (Exception $e){
+	        $statusCode = 400;
+	    }finally{
+	        return Response::json($response, $statusCode);
+	    }
+	 
+	}
+
 	/**
 	 * Display the specified resource.
 	 *
@@ -11,7 +37,7 @@ class CodigoControlController extends \BaseController {
 	public function show($id)
 	{
 		try{
-			$node = Planilla::find($id);
+			//$node = Planilla::find($id);
 
 			/*$autorizacion='29040011007';
 			$factura=$node->impuestoFacturaFactores;
@@ -29,7 +55,7 @@ class CodigoControlController extends \BaseController {
 			//$control=$CodigoControl->generar();
 
 
-			$CodigoControl = new CodigoControl(
+			/*$CodigoControl = new CodigoControl(
 				'30040010595',
 				'10015',
 				'953387014',
@@ -37,7 +63,7 @@ class CodigoControlController extends \BaseController {
 				'5726',
 				'33E265B43C4435sdTuyBVssD355FC4A6F46sdQWasdA)d56666fDsmp9846636B3'
 			);
-			$control=$CodigoControl->generar();
+			$control=$CodigoControl->generar();*/
 			
 			$statusCode = 200;
 

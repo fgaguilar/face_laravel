@@ -25,9 +25,9 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('planillas', 'PlanillaController',
       ['only'=>['index','store','show','update','destroy']]);
     Route::resource('planillasTipo', 'PlanillaTipoController',
-      ['only'=>['show']]);
+      ['only'=>['show','index']]);
     Route::resource('codigos', 'CodigoControlController',
-      ['only'=>['show']]);    
+      ['only'=>['show','index']]);    
 });
 
 Route::group(array('prefix' => 'api'), function()
@@ -45,7 +45,7 @@ Route::group(array('prefix' => 'api'), function()
 Route::get('reporte1', function()
 {
     $html = '<html><body>'
-            . '<p>Put your html here, or generate it with your favourite '
+            . '<p>Fidel Put your html here, or generate it with your favourite '
             . 'templating system.</p>'
             . '</body></html>';
     return PDF::load($html, 'A4', 'portrait')->show();

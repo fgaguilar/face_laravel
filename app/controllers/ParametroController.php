@@ -32,7 +32,7 @@ class ParametroController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		$Planilla = Parametro::create($input);
+		$Parametro = Parametro::create($input);
 		return Response::json($Parametro);
 	}
 
