@@ -27,9 +27,9 @@ class Parametros extends Migration {
 			$table->double('tipoCambioOficial',15,2);			
 			$table->string('puertoDestino',50);
 			$table->string('paisDestino',50);
-	        $table->string('factorKg1',15,2);
-            $table->string('factorKg2',15,2);
-            $table->string('externo',15,2);
+	        $table->double('factorKg1',15,7);
+            $table->double('factorKg2',15,2);
+            $table->double('externo',15,2);
 			$table->timestamps();
 		});
 	}
