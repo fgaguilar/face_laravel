@@ -43,12 +43,11 @@ class FacturaController extends \BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function show($id)
+  public function show($tipo)
   {
-    $node = Factura::find($id);
+    $node = Factura::where('factura', $tipo)->get();
     return Response::json($node);
   }
-
 
   /**
    * Show the form for editing the specified resource.
