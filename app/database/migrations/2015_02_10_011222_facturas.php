@@ -16,6 +16,8 @@ class Facturas extends Migration {
 		{
 			$table->increments('id');
 			$table->date('fecha');
+			$table->string('factura',20);
+			$table->string('nit',20);
 			$table->string('comprador',50);
 			$table->string('direccion',50);
 			$table->string('puertoTransito',50);
@@ -42,6 +44,7 @@ class Facturas extends Migration {
 			$table->double('baseTotalSus',15,2);
 			$table->double('basePromedioSus',15,2);
 			$table->double('baseDiferenciaSus',15,2);
+			$table->double('tipoCambio',6,2);
 			$table->timestamps();
 		});
 	}

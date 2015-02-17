@@ -3,6 +3,8 @@
 class Factura extends \Eloquent {
       protected $fillable = array(
       'fecha',
+      'factura',
+      'nit',
       'comprador',
       'direccion',
       'puertoTransito',
@@ -28,6 +30,7 @@ class Factura extends \Eloquent {
       'baseAgSus',
       'baseTotalSus',
       'basePromedioSus',
-      'baseDiferenciaSus'
+      'baseDiferenciaSus',
+      'tipoCambio'
     );
 }

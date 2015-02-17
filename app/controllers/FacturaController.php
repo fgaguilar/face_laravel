@@ -1,5 +1,5 @@
 <?php
-
+require_once('codigoControl/codigo_control.class.php');
 class FacturaController extends \BaseController {
 
   /**
@@ -87,5 +87,23 @@ class FacturaController extends \BaseController {
     return Response::json($node);
   }
 
-
+  public function imprimirFactura()
+  {
+    $factura = Factura::find(4);
+    $dosificacion = Dosificacione::find(1);
+    $fecha=str_replace("-","",$factura->fecha);
+    $trunc = (int)$factura->baseDiferenciaSus;
+    echo "FACTURA ". $trunc;
+    $CodigoControl = new CodigoControl(
+      $dosificacion->autorizacion,
+      $factura->factura,
+      $factura->nit,
+      $fecha,
+      $trunc,
+      $dosificacion->clave
+    );
+    $factura->codigo = $CodigoControl->generar();
+    $factura->trunc = $trunc;
+    return View::make('pdf.reporte01', array('factura' => $factura));
+  }
 }

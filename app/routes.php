@@ -50,3 +50,23 @@ Route::get('reporte1', function()
             . '</body></html>';
     return PDF::load($html, 'A4', 'portrait')->show();
 });
+
+//Route::controller('authors', 'AuthorsController');
+
+Route::get('pdf', function(){
+    $fpdf = new Fpdf();
+        $fpdf->AddPage();
+        $fpdf->SetFont('Arial','B',16);
+        $fpdf->Cell(40,10,'Hello World!');
+        $fpdf->Output();
+        exit;
+});
+
+Route::get('pdf2', function()
+{
+  $factura = Factura::find(1);
+
+  return View::make('pdf.reporte01', array('factura' => $factura));
+});
+
+Route::get('pdf3', array('uses' => 'FacturaController@imprimirFactura'));

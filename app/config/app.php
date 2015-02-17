@@ -122,8 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Thujohn\Pdf\PdfServiceProvider'
-
+		'Thujohn\Pdf\PdfServiceProvider',
+		'Anouar\Fpdf\FpdfServiceProvider'
 	),
 
 	/*
@@ -175,6 +175,7 @@ return array(
 		'Mail'            => 'Illuminate\Support\Facades\Mail',
 		'Paginator'       => 'Illuminate\Support\Facades\Paginator',
 		'PDF'             => 'Thujohn\Pdf\PdfFacade',
+		'Fpdf'            => 'Anouar\Fpdf\Fpdf',
 		'Password'        => 'Illuminate\Support\Facades\Password',
 		'Queue'           => 'Illuminate\Support\Facades\Queue',
 		'Redirect'        => 'Illuminate\Support\Facades\Redirect',
@@ -190,8 +191,7 @@ return array(
 		'Str'             => 'Illuminate\Support\Str',
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
-		'View'            => 'Illuminate\Support\Facades\View',
-
+		'View'            => 'Illuminate\Support\Facades\View'
 	),
 
 );
