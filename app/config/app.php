@@ -123,7 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Thujohn\Pdf\PdfServiceProvider',
-		'Anouar\Fpdf\FpdfServiceProvider'
+		'Anouar\Fpdf\FpdfServiceProvider',
+		'SimpleSoftwareIO\QrCode\QrCodeServiceProvider'
 	),
 
 	/*
@@ -191,7 +192,8 @@ return array(
 		'Str'             => 'Illuminate\Support\Str',
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
-		'View'            => 'Illuminate\Support\Facades\View'
+		'View'            => 'Illuminate\Support\Facades\View',
+		'QrCode'          => 'SimpleSoftwareIO\QrCode\Facades\QrCode'
 	),
 
 );

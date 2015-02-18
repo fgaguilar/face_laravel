@@ -64,9 +64,16 @@ Route::get('pdf', function(){
 
 Route::get('pdf2', function()
 {
-  $factura = Factura::find(1);
+  $factura = Factura::find(4);
 
   return View::make('pdf.reporte01', array('factura' => $factura));
 });
 
-Route::get('pdf3', array('uses' => 'FacturaController@imprimirFactura'));
+Route::get('pdf3/{id}', array('uses' => 'FacturaController@imprimirFactura'));
+
+Route::get('qrcode', function()
+{
+  $factura = Factura::find(1);
+
+  return View::make('pdf.reporte02', array('factura' => $factura));
+});

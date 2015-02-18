@@ -90,12 +90,26 @@ class CodigoControl {
 		$monto = $this->monto;
 		$llave = $this->llave;
 		// paso 1
+		echo $factura.'<br>';
+		echo $nitci.'<br>';
+		echo $fecha.'<br>';
+		echo $monto.'<br>';
 		$factura = $this->verhoeff_add_recursive($factura, 2);
 		$nitci = $this->verhoeff_add_recursive($nitci, 2);
 		$fecha = $this->verhoeff_add_recursive($fecha, 2);
 		$monto = $this->verhoeff_add_recursive($monto, 2);
-		$suma = bcadd(bcadd(bcadd($factura, $nitci), $fecha), $monto);
-		$suma = $this->verhoeff_add_recursive($suma, 5);
+		echo $factura.'<br>';
+		echo $nitci.'<br>';
+		echo $fecha.'<br>';
+		echo $monto.'<br>';
+		$suma1 = bcadd($factura, $nitci);
+		$suma2 = bcadd($suma1, $fecha);
+		$suma3 = bcadd($suma2, $monto);
+		//$suma = bcadd(bcadd(bcadd($factura, $nitci), $fecha), $monto);
+		echo $suma1.'<br>';
+		echo $suma2.'<br>';
+		echo $suma3.'<br>';
+		$suma = $this->verhoeff_add_recursive($suma3, 5);
 		// paso2
 		$digitos = "" . substr($suma, -5);
 		$digitossum = array();
