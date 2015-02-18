@@ -1,0 +1,23 @@
+<!DOCTYPE  html>
+<!--cargamos nuestro modulo en la etiqueta html con ng-app-->
+<html lang="es" ng-app="app">
+<head>
+    <meta charset="UTF-8" />
+    <title>Combinando Laravel 4 y AngularJS</title>
+    <?php echo HTML::style('css/normalize.css'); ?>
+
+    <?php echo HTML::style('css/foundation.min.css'); ?>
+
+</head>
+<body>
+    <!--creamos el div con la directiva ng-view, aquí será donde
+    carguen todas las vistas-->
+    <div class="row" ng-view></div>
+    <?php echo HTML::script('js/angular.js'); ?>
+
+    <?php echo HTML::script('js/app.js'); ?>
+
+    <?php echo HTML::script('js/controllers.js'); ?>
+
+</body>
+</html>
