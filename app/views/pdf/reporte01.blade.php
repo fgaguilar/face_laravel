@@ -32,7 +32,7 @@
         $fpdf->Cell(125,10,$factura->origen,1,2,'L');
         $fpdf->Cell(125,10,$factura->numeroLote,1,2,'L');
         $fpdf->Cell(125,10,$factura->codigo,1,2,'L');
-        //$fpdf->Image('http://localhost/face_laravel/public/qrcode.png',0,0,0,0,'PNG');
+        $fpdf->Image($_SERVER['DOCUMENT_ROOT'].'/face_laravel/public/qrcode.png',150,8,50,'PNG');
         $fpdf->Output();
         exit;
  ?>
