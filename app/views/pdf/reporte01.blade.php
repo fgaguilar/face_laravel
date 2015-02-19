@@ -16,7 +16,6 @@
         $fpdf->Cell(60,10,'ORIGEN: ',1,2,'L');
         $fpdf->Cell(60,10,'No LOTE: ',1,2,'L');
         $fpdf->Cell(60,10,'CODIGO DE CONTROL ',1,2,'L');
-        $fpdf->Cell(60,10,'QR ',1,2,'L');
 
         $fpdf->SetXY(70, 10);
         $fpdf->Cell(125,10,$factura->fecha,1,2,'L');
