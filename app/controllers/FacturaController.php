@@ -91,7 +91,7 @@ class FacturaController extends \BaseController {
   {
     $factura1 = Factura::find($id);
     $dosificacion = Dosificacione::find(1);
-    echo "Ingreso";
+    echo "Ingreso 111";
     $fecha=str_replace("-","",$factura1->fecha);
     $trunc = (int)$factura1->baseDiferenciaSus;
     $CodigoControl = new CodigoControl(
@@ -103,7 +103,8 @@ class FacturaController extends \BaseController {
       $dosificacion->clave
     );
     $factura1->codigo = $CodigoControl->generar();
-    echo $factura1->codigo;
+    QrCode::format('png')->generate('Make me into a QrCode!', 'qrcode2.png');
+    QrCode::format('png')->generate('Make me into a QrCode!', 'qrcode3.png');
     return View::make('pdf.reporte01', array('factura' => $factura1));
   }
 }
