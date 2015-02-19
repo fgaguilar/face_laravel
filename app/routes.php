@@ -80,6 +80,6 @@ Route::get('qrcode', function()
 
 Route::get('qrcode2', function()
 {
-
+  QrCode::format('png')->generate('Make1 me into a QrCode!');
   return View::make('pdf.footer');
 });
