@@ -84,7 +84,6 @@ class CodigoControl {
 	 * Algoritmo de generacion del codigo de control
 	 */
 	public function generar() {
-		error "Ingreso a generar";
 		ChromePhp::log('Ingreso a generar');
 		//ChromePhp::log($_SERVER);
 		//ChromePhp::warn('something went wrong!');
