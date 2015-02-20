@@ -32,6 +32,10 @@ class FacturaController extends \BaseController {
   public function store()
   {
     $input = Input::all();
+    //$planilla = Planilla::find($input->planilla_id);
+    /*$planilla_id = Input::get('planilla_id');
+    $planilla = Planilla::find($planilla_id);
+    $factura = $planilla->factura()->create($input);*/
     $Factura = Factura::create($input);
     return Response::json($Factura);
   }
