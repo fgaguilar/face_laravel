@@ -34,7 +34,7 @@ class Factura extends \Eloquent {
             'tipoCambio',
             'planilla_id'
       );
-      public function factura(){
+      public function planilla(){
             return $this->belongsTo ('Planilla');
       }
 }

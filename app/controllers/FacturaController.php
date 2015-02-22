@@ -49,8 +49,9 @@ class FacturaController extends \BaseController {
    */
   public function show($tipo)
   {
-    $node = Factura::where('factura', $tipo)->get();
+    $node = Factura::where('planilla_id', $tipo)->get();
     return Response::json($node);
+    //return Response::json($node);
   }
 
   /**
@@ -93,7 +94,13 @@ class FacturaController extends \BaseController {
 
   public function imprimirFactura($id)
   {
-    $factura1 = Factura::find($id);
+    //$planilla = Planilla::find($id);
+    $f = Factura::where('id', '5');
+    ChromePhp::log('Planilla');
+    ChromePhp::log($f);
+    $factura1 = Factura::find(5);
+    ChromePhp::log('Factura');
+    ChromePhp::log($factura1->planilla_id);
     $dosificacion = Dosificacione::find(1);
     echo "Ingreso 111";
     $fecha=str_replace("-","",$factura1->fecha);
