@@ -28,12 +28,10 @@ Route::group(array('prefix' => 'api'), function()
       ['only'=>['show','index']]);
     Route::resource('codigos', 'CodigoControlController',
       ['only'=>['show','index']]);    
-});
-
-Route::group(array('prefix' => 'api'), function()
-{
     Route::resource('facturas', 'FacturaController',
       ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('parametross', 'ParametroController',
+      ['only'=>['index','store','show','update','destroy']]);    
 });
 
 Route::group(array('prefix' => 'api'), function()
@@ -45,7 +43,7 @@ Route::group(array('prefix' => 'api'), function()
 Route::get('reporte1', function()
 {
     $html = '<html><body>'
-            . '<p>Fidel Put your html here, or generate it with your favourite '
+            . '<p>Fidel Reporte '
             . 'templating system.</p>'
             . '</body></html>';
     return PDF::load($html, 'A4', 'portrait')->show();

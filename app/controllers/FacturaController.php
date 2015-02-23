@@ -94,15 +94,8 @@ class FacturaController extends \BaseController {
 
   public function imprimirFactura($id)
   {
-    //$planilla = Planilla::find($id);
-    $f = Factura::where('id', '5');
-    ChromePhp::log('Planilla');
-    ChromePhp::log($f);
-    $factura1 = Factura::find(5);
-    ChromePhp::log('Factura');
-    ChromePhp::log($factura1->planilla_id);
+    $factura1 = Factura::find($id);
     $dosificacion = Dosificacione::find(1);
-    echo "Ingreso 111";
     $fecha=str_replace("-","",$factura1->fecha);
     $trunc = (int)$factura1->baseDiferenciaSus;
     $CodigoControl = new CodigoControl(

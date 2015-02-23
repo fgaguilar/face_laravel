@@ -5,10 +5,13 @@ class Parametro extends \Eloquent {
       'humedad',
       'merma',
       'leyesZn',
+      'leyesPb',
       'leyesAg',
       'cotizacionesZn',
+      'cotizacionesPb',
       'cotizacionesAg',
       'alicuotasZn',
+      'alicuotasPb',
       'alicuotasAg',
       'tipoCambioANB',
       'tipoCambioOficial',             
@@ -16,6 +19,10 @@ class Parametro extends \Eloquent {
       'paisDestino',
       'factorKg1',
       'factorKg2',
-      'externo'
+      'externo',
+      'comprador',
+      'direccion',
+      'puerto',
+      'origen'
     );
 }

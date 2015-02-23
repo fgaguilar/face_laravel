@@ -1,9 +1,10 @@
  <?php   
- $fpdf = new Fpdf();
+        $fpdf = new Fpdf();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial','B',8);
+
         $fpdf->SetXY(10, 10);
-        $fpdf->Cell(60,10,'POTOSI: ',1,2,'L');
+        $fpdf->Cell(60,10,'POTOSI: ',0,1,'L');
         $fpdf->Cell(60,10,'FACTURA: ',1,2,'L');
         $fpdf->Cell(60,10,'NIT: ',1,2,'L');
         $fpdf->Cell(60,10,'COMPRADOR: ',1,2,'L');
