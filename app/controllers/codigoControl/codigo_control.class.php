@@ -26,7 +26,7 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-include 'ChromePhp.php';
+//include 'ChromePhp.php';
 class CodigoControl {
 	
 	// Verhoeff Digit table variables
@@ -84,7 +84,7 @@ class CodigoControl {
 	 * Algoritmo de generacion del codigo de control
 	 */
 	public function generar() {
-		ChromePhp::log('Ingreso a generar');
+		//ChromePhp::log('Ingreso a generar');
 		//ChromePhp::log($_SERVER);
 		//ChromePhp::warn('something went wrong!');
 		$autorizacion = $this->autorizacion;
@@ -94,28 +94,28 @@ class CodigoControl {
 		$monto = $this->monto;
 		$llave = $this->llave;
 		// paso 1
-		ChromePhp::log('Factura : '.$factura);
-		ChromePhp::log('NIT : '.$nitci);
-		ChromePhp::log('FECHA ; '.$fecha);
-		ChromePhp::log('MONTO : '.$monto);
+		//ChromePhp::log('Factura : '.$factura);
+		//ChromePhp::log('NIT : '.$nitci);
+		//ChromePhp::log('FECHA ; '.$fecha);
+		//ChromePhp::log('MONTO : '.$monto);
 		$factura = $this->verhoeff_add_recursive($factura, 2);
 		$nitci = $this->verhoeff_add_recursive($nitci, 2);
 		$fecha = $this->verhoeff_add_recursive($fecha, 2);
 		$monto = $this->verhoeff_add_recursive($monto, 2);
-		ChromePhp::log('Factura : '.$factura);
-		ChromePhp::log('NIT : '.$nitci);
-		ChromePhp::log('FECHA ; '.$fecha);
-		ChromePhp::log('MONTO : '.$monto);
+		//ChromePhp::log('Factura : '.$factura);
+		//ChromePhp::log('NIT : '.$nitci);
+		//ChromePhp::log('FECHA ; '.$fecha);
+		//ChromePhp::log('MONTO : '.$monto);
 		$suma1 = bcadd($factura, $nitci);
 		$suma2 = bcadd($suma1, $fecha);
 		$suma3 = bcadd($suma2, $monto);
 		$sumat = $factura+$nitci+$fecha+$monto;
 		//$suma = bcadd(bcadd(bcadd($factura, $nitci), $fecha), $monto);
-		ChromePhp::log('SUMA1 : '.$suma1);
-		ChromePhp::log('SUMA2 : '.$suma2);
-		ChromePhp::log('SUMA3 : '.$suma3);
-		ChromePhp::log('SUMAT : '.$sumat);
-		ChromePhp::log($_SERVER['DOCUMENT_ROOT']);
+		//ChromePhp::log('SUMA1 : '.$suma1);
+		//ChromePhp::log('SUMA2 : '.$suma2);
+		//ChromePhp::log('SUMA3 : '.$suma3);
+		//ChromePhp::log('SUMAT : '.$sumat);
+		//ChromePhp::log($_SERVER['DOCUMENT_ROOT']);
 		$suma = $this->verhoeff_add_recursive($sumat, 5);
 		// paso2
 		$digitos = "" . substr($suma, -5);

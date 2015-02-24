@@ -1,5 +1,6 @@
 <?php
 require_once('codigoControl/codigo_control.class.php'); 
+//require_once('codigoControl/ChromePhp.php');
 class FacturaController extends \BaseController {
 
   /**
@@ -94,7 +95,8 @@ class FacturaController extends \BaseController {
 
   public function imprimirFactura($id)
   {
-    $factura1 = Factura::find($id);
+    $node = Factura::where('planilla_id', $id)->get(array('id', 'planilla_id'));
+    $factura1 = Factura::find($node[0]->id);
     $dosificacion = Dosificacione::find(1);
     $fecha=str_replace("-","",$factura1->fecha);
     $trunc = (int)$factura1->baseDiferenciaSus;
