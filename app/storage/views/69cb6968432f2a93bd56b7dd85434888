@@ -1,9 +1,10 @@
  <?php   
- $fpdf = new Fpdf();
+        $fpdf = new Fpdf();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial','B',8);
+
         $fpdf->SetXY(10, 10);
-        $fpdf->Cell(60,10,'POTOSI: ',1,2,'L');
+        $fpdf->Cell(60,10,'POTOSI: ',0,2,'L');
         $fpdf->Cell(60,10,'FACTURA: ',1,2,'L');
         $fpdf->Cell(60,10,'NIT: ',1,2,'L');
         $fpdf->Cell(60,10,'COMPRADOR: ',1,2,'L');
@@ -16,7 +17,6 @@
         $fpdf->Cell(60,10,'ORIGEN: ',1,2,'L');
         $fpdf->Cell(60,10,'No LOTE: ',1,2,'L');
         $fpdf->Cell(60,10,'CODIGO DE CONTROL ',1,2,'L');
-        $fpdf->Cell(60,10,'QR ',1,2,'L');
 
         $fpdf->SetXY(70, 10);
         $fpdf->Cell(125,10,$factura->fecha,1,2,'L');
@@ -32,7 +32,7 @@
         $fpdf->Cell(125,10,$factura->origen,1,2,'L');
         $fpdf->Cell(125,10,$factura->numeroLote,1,2,'L');
         $fpdf->Cell(125,10,$factura->codigo,1,2,'L');
-        //$fpdf->Image($factura->qr, 25, 25, 17, 25, 'PNG');
+        $fpdf->Image($_SERVER['DOCUMENT_ROOT'].'/face_laravel/public/qrcode.png',150,8,50,'PNG');
         $fpdf->Output();
         exit;
  ?>

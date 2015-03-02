@@ -1,6 +1,6 @@
 <?php
 
-class ParametroController extends \BaseController {
+class parametroController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class ParametroController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Parametro::all()->toJson();
+		return parametro::all()->toJson();
 	}
 
 
@@ -32,7 +32,7 @@ class ParametroController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		$Parametro = Parametro::create($input);
+		$Parametro = parametro::create($input);
 		return Response::json($Parametro);
 	}
 
@@ -45,7 +45,7 @@ class ParametroController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$node = Parametro::find($id);
+		$node = parametro::find($id);
 		return Response::json($node);
 	}
 
@@ -71,7 +71,7 @@ class ParametroController extends \BaseController {
 	public function update($id)
 	{
 		$input = Input::all();
-		$node = Parametro::find($id)->update($input);
+		$node = parametro::find($id)->update($input);
 		return Response::json($node);
 	}
 
@@ -84,7 +84,7 @@ class ParametroController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$node = Parametro::destroy($id);
+		$node = parametro::destroy($id);
 		return Response::json($node);
 	}
 
