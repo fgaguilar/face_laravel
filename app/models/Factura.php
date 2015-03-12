@@ -32,7 +32,12 @@ class Factura extends \Eloquent {
             'basePromedioSus',
             'baseDiferenciaSus',
             'tipoCambio',
-            'planilla_id'
+            'planilla_id',
+            'control',
+            'autorizacion',
+            'vencimiento',
+            'literal1',
+            'literal2'
       );
       public function planilla(){
             return $this->belongsTo ('Planilla');

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2015-03-03 21:53:14
+Date: 2015-03-11 20:50:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,9 +64,3 @@ CREATE TABLE `parametros` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- ----------------------------
--- Records of parametros
--- ----------------------------
-INSERT INTO `parametros` VALUES ('1', 'ZINC', '9.18', '15', '1.00', '0', '52.55', '0', '466.00', '15', '0.95', '30', '19.05', '15', '5.00', '0', '6.00', '0', '6.96', '0', '6.96', '15', 'ANTWERP', '30', 'BELGICA', '0', '2.2046223', '15', '32.15000', '0', '1.00', '15', 'FIDEL AGUILAR', '30', 'CASIMIRO CORRAL', '30', 'ARTPOR', '30', 'DESCONOCIDO', '30', '0000-00-00 00:00:00', '2015-03-04 04:50:49');
-INSERT INTO `parametros` VALUES ('2', 'PLOMO', '6.61', '30', '1.00', '0', '65.02', '0', '2786.00', '30', '0.92', '30', '16.32', '0', '5.00', '0', '6.00', '0', '6.96', '0', '6.96', '0', 'ONSAN', '0', 'KOREA', '0', '2.2046223', '0', '32.15000', '0', '32.00', '1', 'FIDEL AGUILAR', '0', 'POSNASKY 521', '0', 'ONSAN', '0', 'POTOSI - BOLIVIA', '0', '2015-03-02 04:38:34', '2015-03-04 04:47:54');

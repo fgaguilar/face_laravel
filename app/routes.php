@@ -17,6 +17,7 @@ Route::group(array('prefix' => 'api'), function()
       ['only'=>['index','store','show','update','destroy']]);
     Route::resource('parametros', 'parametroController',
       ['only'=>['index','store','show','update','destroy']]);    
+    Route::get('control/{id}','FacturaController@control');
 });
 
 Route::get('reporte1', function()
@@ -60,3 +61,21 @@ Route::get('qrcode2', function()
   QrCode::format('png')->generate('Make1 me into a QrCode!');
   return View::make('pdf.footer');
 });
+
+// Route to the login page
+Route::get('login', function()
+{
+  return View::make('login.loginform')->with('title', 'Login Auth');
+});
+ 
+// Route to the login page for post
+Route::post('login', 'UserController@login');
+ 
+// Route to logout
+Route::get('logout', function() 
+{
+  Auth::logout();
+  Session::flush();
+  return Redirect::to('login');
+});
+

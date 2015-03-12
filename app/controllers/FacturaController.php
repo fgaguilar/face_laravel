@@ -33,10 +33,25 @@ class FacturaController extends \BaseController {
   public function store()
   {
     $input = Input::all();
-    //$planilla = Planilla::find($input->planilla_id);
-    /*$planilla_id = Input::get('planilla_id');
-    $planilla = Planilla::find($planilla_id);
-    $factura = $planilla->factura()->create($input);*/
+
+    $dosificacion = Dosificacione::find(1);
+    $fecha=str_replace("-","",$input["fecha"]);
+    $trunc = (int)$input["baseDiferenciaSus"];
+    $CodigoControl = new CodigoControl(
+      $dosificacion->autorizacion,
+      $input["factura"],
+      $input["nit"],
+      $fecha,
+      $trunc,
+      $dosificacion->clave
+    );
+    $codigo = $CodigoControl->generar();
+	$input["control"]=$codigo;
+	$input["autorizacion"]=$dosificacion->autorizacion;
+	$input["vencimiento"]=$dosificacion->vencimiento;
+	$input["literal1"]=$CodigoControl->numtoletras($input["baseTotalSus"]);
+	$input["literal2"]=$CodigoControl->numtoletras($input["baseDiferenciaSus"]);
+	
     $Factura = Factura::create($input);
     return Response::json($Factura);
   }
@@ -109,8 +124,31 @@ class FacturaController extends \BaseController {
       $dosificacion->clave
     );
     $factura1->codigo = $CodigoControl->generar();
-    QrCode::format('png')->generate('Make me into a QrCode!', 'qrcode2.png');
-    QrCode::format('png')->generate('Make me into a QrCode!', 'qrcode3.png');
+    //QrCode::format('png')->generate('Make me into a QrCode!', 'qrcode2.png');
+    //QrCode::format('png')->generate('Make me into a QrCode!', 'qrcode3.png');
     return View::make('pdf.reporte01', array('factura' => $factura1));
   }
+
+  public function control($id)
+  {
+    $node = Factura::where('planilla_id', $id)->get(array('id', 'planilla_id'));
+    
+    $factura1 = Factura::find($node[0]->id);
+
+    $dosificacion = Dosificacione::find(1);
+    $fecha=str_replace("-","",$factura1->fecha);
+    $trunc = (int)$factura1->baseDiferenciaSus;
+    $CodigoControl = new CodigoControl(
+      $dosificacion->autorizacion,
+      $factura1->factura,
+      $factura1->nit,
+      $fecha,
+      $trunc,
+      $dosificacion->clave
+    );
+    $factura1->codigo = $CodigoControl->generar();
+    return Response::json($node);
+  }
+
+  
 }
