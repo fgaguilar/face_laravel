@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2015-03-01 23:05:45
+Date: 2015-03-03 21:53:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,7 +48,7 @@ CREATE TABLE `parametros` (
   `paisDestino_d` int(2) DEFAULT NULL,
   `factorKg1` double(15,7) NOT NULL,
   `factorKg1_d` int(2) DEFAULT NULL,
-  `factorKg2` double(15,2) NOT NULL,
+  `factorKg2` double(15,5) NOT NULL,
   `factorKg2_d` int(2) DEFAULT NULL,
   `externo` double(15,2) NOT NULL,
   `externo_d` int(2) DEFAULT NULL,
@@ -68,5 +68,5 @@ CREATE TABLE `parametros` (
 -- ----------------------------
 -- Records of parametros
 -- ----------------------------
-INSERT INTO `parametros` VALUES ('1', 'ZINC', '9.18', '15', '1.00', '1', '1.00', '1', '1.00', '1', '1.00', null, '1.00', '1', '1.00', '11', '11.00', '1', '1.00', '1', '1.00', '11', '11', '11', '11', '1', '11.0000000', '11', '1.00', '1', '1.00', '1', 'FIDEL AGUILAR', '0', 'CASIMIRO CORRAL', '0', 'ARTPOR', '15', 'DESCONOCIDO', '0', '0000-00-00 00:00:00', '2015-03-02 06:02:11');
-INSERT INTO `parametros` VALUES ('2', 'PLOMO', '9.02', '11', '1.00', '1', '1.00', '1', '1.00', '1', '1.00', null, '1.00', '1', '1.00', '11', '11.00', '1', '1.00', '1', '1.00', '11', '11', '11', '11', '1', '11.0000000', '11', '1.00', '1', '1.00', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2015-03-02 04:38:34', '2015-03-02 06:04:43');
+INSERT INTO `parametros` VALUES ('1', 'ZINC', '9.18', '15', '1.00', '0', '52.55', '0', '466.00', '15', '0.95', '30', '19.05', '15', '5.00', '0', '6.00', '0', '6.96', '0', '6.96', '15', 'ANTWERP', '30', 'BELGICA', '0', '2.2046223', '15', '32.15000', '0', '1.00', '15', 'FIDEL AGUILAR', '30', 'CASIMIRO CORRAL', '30', 'ARTPOR', '30', 'DESCONOCIDO', '30', '0000-00-00 00:00:00', '2015-03-04 04:50:49');
+INSERT INTO `parametros` VALUES ('2', 'PLOMO', '6.61', '30', '1.00', '0', '65.02', '0', '2786.00', '30', '0.92', '30', '16.32', '0', '5.00', '0', '6.00', '0', '6.96', '0', '6.96', '0', 'ONSAN', '0', 'KOREA', '0', '2.2046223', '0', '32.15000', '0', '32.00', '1', 'FIDEL AGUILAR', '0', 'POSNASKY 521', '0', 'ONSAN', '0', 'POTOSI - BOLIVIA', '0', '2015-03-02 04:38:34', '2015-03-04 04:47:54');
