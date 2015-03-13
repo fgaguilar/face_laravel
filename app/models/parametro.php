@@ -40,6 +40,9 @@ class parametro extends \Eloquent {
 		'puerto',
 		'puerto_d',
 		'origen',
-		'origen_d'
+		'origen_d',
+		'concentrado',
+		'partida1',
+		'partida2'
     );
 }
