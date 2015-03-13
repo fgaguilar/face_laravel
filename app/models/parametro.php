@@ -42,7 +42,10 @@ class parametro extends \Eloquent {
 		'origen',
 		'origen_d',
 		'concentrado',
+		'concentrado_d',
 		'partida1',
-		'partida2'
+		'partida1_d',		
+		'partida2',
+		'partida2_d'
     );
 }
