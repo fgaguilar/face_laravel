@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2015-03-12 18:24:50
+Date: 2015-03-12 21:21:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,7 +59,10 @@ CREATE TABLE `facturas` (
   `vencimiento` date DEFAULT NULL,
   `literal1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `literal2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `concentrado` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `partida1` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `partida2` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`,`pesoMermaPeso`),
   KEY `planilla_idx` (`planilla_id`),
   CONSTRAINT `planilla_fk` FOREIGN KEY (`planilla_id`) REFERENCES `planillas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

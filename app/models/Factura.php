@@ -37,7 +37,10 @@ class Factura extends \Eloquent {
             'autorizacion',
             'vencimiento',
             'literal1',
-            'literal2'
+            'literal2',
+            'concentrado',
+            'partida1',
+            'partida2'
       );
       public function planilla(){
             return $this->belongsTo ('Planilla');
