@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2015-03-12 18:24:35
+Date: 2015-03-14 15:50:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,3 +30,8 @@ CREATE TABLE `dosificaciones` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of dosificaciones
+-- ----------------------------
+INSERT INTO `dosificaciones` VALUES ('1', '29040011007', '9rCB7Sv4X29d)5k7N%3ab89p-3(5[A', '2015-01-01', '2015-12-31', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00');

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2015-03-12 18:25:12
+Date: 2015-03-14 15:51:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -69,3 +69,7 @@ CREATE TABLE `planillas` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of planillas
+-- ----------------------------
