@@ -20,6 +20,10 @@ class planController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
+
+	    $dosificacion = Dosificacione::find(1);
+	    $dosificacion["impuestoFacturaFactores"]=$dosificacion["impuestoFacturaFactores"]+1;
+		$node = Dosificacione::find(1)->update($dosificacion);
 		$plan = Plan::create($input);
 		return Response::json($plan);		
 	}

@@ -128,24 +128,12 @@ class FacturaController extends \BaseController {
     return View::make('pdf.reporte01', array('factura' => $factura1));
   }
 
-  public function control($id)
+  public function factura($id)
   {
-    $node = Factura::where('planilla_id', $id)->get(array('id', 'planilla_id'));
-    
-    $factura1 = Factura::find($node[0]->id);
-
-    $dosificacion = Dosificacione::find(1);
-    $fecha=str_replace("-","",$factura1->fecha);
-    $trunc = (int)$factura1->baseDiferenciaSus;
-    $CodigoControl = new CodigoControl(
-      $dosificacion->autorizacion,
-      $factura1->factura,
-      $factura1->nit,
-      $fecha,
-      $trunc,
-      $dosificacion->clave
-    );
-    $factura1->codigo = $CodigoControl->generar();
+    //$node = Factura::where('planilla_id', $id)->get(array('id', 'planilla_id'));
+    $node = Factura::where('planilla_id', $id)->get(array('id','planilla_id'));
+    /*var_dump($node);
+    die;*/
     return Response::json($node);
   }
 
