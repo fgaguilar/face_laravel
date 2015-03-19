@@ -40,7 +40,9 @@ class Factura extends \Eloquent {
             'literal2',
             'concentrado',
             'partida1',
-            'partida2'
+            'partida2',
+            'baseDiferenciaBs',
+            'literal3'
       );
       public function planilla(){
             return $this->belongsTo ('Planilla');

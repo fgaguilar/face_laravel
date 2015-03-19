@@ -237,7 +237,7 @@ class CodigoControl {
 		return $temp;
 	}
 
-	public function numtoletras($xcifra)
+	public function numtoletras($xcifra,$tipoMoneda)
 	{
     $xarray = array(0 => "Cero",
         1 => "UN", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE",
@@ -358,15 +358,29 @@ class CodigoControl {
                         $xcadena.= " MILLONES ";
                     break;
                 case 2:
-                    if ($xcifra < 1) {
-                        $xcadena = "CERO CON $xdecimales/100 DOLARES AMERICANOS";
-                    }
-                    if ($xcifra >= 1 && $xcifra < 2) {
-                        $xcadena = "UN CON $xdecimales/100 DOLAR AMERICANO";
-                    }
-                    if ($xcifra >= 2) {
-                        $xcadena.= "CON $xdecimales/100 DOLARES AMERICANOS"; //
-                    }
+                	if ($tipoMoneda=="Sus"){
+	                	if ($xcifra < 1) {
+	                        $xcadena = "CERO CON $xdecimales/100 DOLARES AMERICANOS";
+	                    }
+	                    if ($xcifra >= 1 && $xcifra < 2) {
+	                        $xcadena = "UN CON $xdecimales/100 DOLAR AMERICANO";
+	                    }
+	                    if ($xcifra >= 2) {
+	                        $xcadena.= "CON $xdecimales/100 DOLARES AMERICANOS"; //
+	                    }	
+                	}
+                	else {
+                		if ($xcifra < 1) {
+	                        $xcadena = "CERO CON $xdecimales/100 BOLIVIANOS";
+	                    }
+	                    if ($xcifra >= 1 && $xcifra < 2) {
+	                        $xcadena = "UN CON $xdecimales/100 BOLIVIANO";
+	                    }
+	                    if ($xcifra >= 2) {
+	                        $xcadena.= "CON $xdecimales/100 BOLIVIANOS"; //
+	                    }
+                	}
+                    
                     break;
             } // endswitch ($xz)
         } // ENDIF (trim($xaux) != "")
