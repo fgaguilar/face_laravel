@@ -1,10 +1,5 @@
 <?php
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('planillas', 'PlanillaController',
@@ -81,3 +76,7 @@ Route::get('logout', function()
   return Redirect::to('login');
 });
 
+Route::get('/', array(
+    'as' => 'home',
+    'uses' => 'HomeController@home'
+));
