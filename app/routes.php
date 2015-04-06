@@ -17,6 +17,12 @@ Route::group(array('prefix' => 'api'), function()
     Route::get('factura/{id}','FacturaController@factura');
 });
 
+Route::group(array('prefix' => 'service'), function() {
+    Route::resource('authenticate', 'AuthenticationController',
+      ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('movies', 'MovieController');
+});
+
 Route::get('reporte1', function()
 {
     $html = '<html><body>'
@@ -80,3 +86,11 @@ Route::get('/', array(
     'as' => 'home',
     'uses' => 'HomeController@home'
 ));
+
+/*Route::group(array('before' => 'guest'), function(){
+  Router::group(array('before' => 'csrf'), function(){
+    
+  });
+  Route::get();
+});*/
+
