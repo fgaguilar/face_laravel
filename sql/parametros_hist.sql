@@ -10,17 +10,17 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2015-04-05 20:53:18
+Date: 2015-04-05 20:53:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `parametros`
+-- Table structure for `parametros_hist`
 -- ----------------------------
-DROP TABLE IF EXISTS `parametros`;
-CREATE TABLE `parametros` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `parametros_hist`;
+CREATE TABLE `parametros_hist` (
+  `id` int(10) unsigned NOT NULL,
   `planilla` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `humedad` double(15,2) NOT NULL,
   `humedad_d` int(2) DEFAULT NULL,
@@ -67,65 +67,10 @@ CREATE TABLE `parametros` (
   `partida1` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `partida1_d` int(2) DEFAULT NULL,
   `partida2` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `partida2_d` int(2) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `partida2_d` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of parametros
+-- Records of parametros_hist
 -- ----------------------------
-INSERT INTO `parametros` VALUES ('1', 'ZINC', '9.18', '1', '1.20', '1', '52.55', '1', '466.00', '1', '0.25', '2', '0.95', '2', '1.00', '2', '1.00', '2', '6.96', '1', '6.96', '1', 'ANTWERP', '1', 'BELGICA', '1', '2.2046223', '1', '32.15073', '1', '32.00', '1', 'FIDEL AGUILAR', '1', 'CASIMIRO CORRAL', '1', 'ARTPOR', '1', 'DESCONOCIDO', '1', '0000-00-00 00:00:00', '2015-04-06 00:49:55', 'Zinc-Plata', '1', '2608.00.00.00', '1', '2616.10.00.00', '1');
-INSERT INTO `parametros` VALUES ('2', 'PLOMO', '6.61', '1', '1.00', '1', '65.02', '1', '2786.00', '1', '0.00', '2', '0.99', '2', '0.00', '2', '0.00', '2', '6.96', '1', '6.96', '1', 'ONSAN', '1', 'KOREA', '1', '2.2046223', '1', '32.15000', '1', '32.00', '1', 'FIDEL AGUILAR', '1', 'POSNASKY 521', '1', 'ONSAN', '1', 'POTOSI - BOLIVIA', '1', '2015-03-02 04:38:34', '2015-04-05 22:42:07', 'PLOMO-PLATA', '1', '2145.00.00.11', '1', '2146.00.00.00', '1');
-DROP TRIGGER IF EXISTS `trg_historico`;
-DELIMITER ;;
-CREATE TRIGGER `trg_historico` AFTER UPDATE ON `parametros` FOR EACH ROW insert into parametros_hist values (
-  OLD.id,
-  OLD.planilla,
-  OLD.humedad,
-  OLD.humedad_d,
-  OLD.merma,
-  OLD.merma_d,
-  OLD.leyes,
-  OLD.leyes_d,
-  OLD.leyesAg,
-  OLD.leyesAg_d,
-  OLD.cotizaciones,
-  OLD.cotizaciones_d,
-  OLD.cotizacionesAg,
-  OLD.cotizacionesAg_d,
-  OLD.alicuotas,
-  OLD.alicuotas_d,
-  OLD.alicuotasAg,
-  OLD.alicuotasAg_d,
-  OLD.tipoCambioANB,
-  OLD.tipoCambioANB_d,
-  OLD.tipoCambioOficial,
-  OLD.tipoCambioOficial_d,
-  OLD.puertoDestino,
-  OLD.puertoDestino_d,
-  OLD.paisDestino,
-  OLD.paisDestino_d,
-  OLD.factorKg1,
-  OLD.factorKg1_d,
-  OLD.factorKg2,
-  OLD.factorKg2_d,
-  OLD.externo,
-  OLD.externo_d,
-  OLD.comprador,
-  OLD.comprador_d,
-  OLD.direccion,
-  OLD.direccion_d,
-  OLD.puerto,
-  OLD.puerto_d,
-  OLD.origen,
-  OLD.origen_d,
-  OLD.created_at,
-  OLD.updated_at,
-  OLD.concentrado,
-  OLD.concentrado_d,
-  OLD.partida1,
-  OLD.partida1_d,
-  OLD.partida2,
-  OLD.partida2_d)
-;;
-DELIMITER ;
+INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1', '1.00', '1', '52.55', '1', '466.00', '1', '0.25', '2', '0.95', '2', '1.00', '2', '1.00', '2', '6.96', '1', '6.96', '1', 'ANTWERP', '1', 'BELGICA', '1', '2.2046223', '1', '32.15073', '1', '32.00', '1', 'FIDEL AGUILAR', '1', 'CASIMIRO CORRAL', '1', 'ARTPOR', '1', 'DESCONOCIDO', '1', '0000-00-00 00:00:00', '2015-04-06 00:24:52', 'Zinc-Plata', '1', '2608.00.00.00', '1', '2616.10.00.00', '1');
