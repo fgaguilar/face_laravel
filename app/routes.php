@@ -65,23 +65,6 @@ Route::get('qrcode2', function()
   return View::make('pdf.footer');
 });
 
-// Route to the login page
-Route::get('login', function()
-{
-  return View::make('login.loginform')->with('title', 'Login Auth');
-});
- 
-// Route to the login page for post
-Route::post('login', 'UserController@login');
- 
-// Route to logout
-Route::get('logout', function() 
-{
-  Auth::logout();
-  Session::flush();
-  return Redirect::to('login');
-});
-
 Route::get('/', array(
     'as' => 'home',
     'uses' => 'HomeController@home'
@@ -94,3 +77,17 @@ Route::get('/', array(
   Route::get();
 });*/
 
+Route::group(array('before' => 'guest'),function(){
+  
+  Route::group(array('before' => 'csrf'),function(){
+    Route::post('/account/create',array(
+      'as' => 'account-create-post',
+      'uses' => 'AccountController@postCreate' 
+    ));
+  });
+  Route::get('/account/create',array(
+    'as' => 'account-create',
+    'uses' => 'AccountController@getCreate' 
+  ));
+
+});

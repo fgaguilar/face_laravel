@@ -19,7 +19,7 @@
 <body>
 
     <div class="container">
-
+        @include('layout.navigation')
         <div class="content">
             @yield('content')
         </div>
