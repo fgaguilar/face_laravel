@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql_face
-Source Server Version : 50542
+Source Server         : mysql
+Source Server Version : 50540
 Source Host           : localhost:3306
 Source Database       : face_laravel
 
 Target Server Type    : MYSQL
-Target Server Version : 50542
+Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2015-04-06 10:51:09
+Date: 2015-04-19 21:09:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -51,8 +51,7 @@ CREATE TABLE `parametros_hist` (
 -- ----------------------------
 -- Records of parametros_hist
 -- ----------------------------
-INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1.00', '52.55', '466.00', '0.25', '0.95', '1.00', '1.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-06 00:24:52', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
-INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1.20', '52.55', '466.00', '0.25', '0.95', '1.00', '1.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-06 00:49:55', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
-INSERT INTO `parametros_hist` VALUES ('2', 'PLOMO', '6.61', '1.00', '65.02', '2786.00', '0.00', '0.99', '0.00', '0.00', '6.96', '6.96', 'ONSAN', 'KOREA', '2.2046223', '32.15000', '32.00', 'FIDEL AGUILAR', 'POSNASKY 521', 'ONSAN', 'POTOSI - BOLIVIA', '2015-03-02 04:38:34', '2015-04-05 22:42:07', 'PLOMO-PLATA', '2145.00.00.11', '2146.00.00.00');
-INSERT INTO `parametros_hist` VALUES ('2', 'PLOMO', '6.61', '1.01', '65.02', '2786.00', '0.00', '0.99', '0.00', '0.00', '6.96', '6.96', 'ONSAN', 'KOREA', '2.2046223', '32.15000', '32.00', 'FIDEL AGUILAR', 'POSNASKY 521', 'ONSAN', 'POTOSI - BOLIVIA', '2015-03-02 04:38:34', '2015-04-06 12:34:24', 'PLOMO-PLATA', '2145.00.00.11', '2146.00.00.00');
-INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1.00', '52.55', '466.00', '0.25', '0.95', '1.00', '1.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-06 12:33:37', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
+INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1.01', '52.55', '466.00', '0.25', '0.95', '1.00', '1.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-06 13:12:02', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
+INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1.01', '52.55', '466.00', '0.25', '0.95', '111.00', '222.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-14 02:20:01', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
+INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.19', '1.01', '52.55', '466.00', '0.25', '0.95', '111.00', '222.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-14 02:20:01', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
+INSERT INTO `parametros_hist` VALUES ('1', 'ZINC', '9.18', '1.01', '52.55', '466.00', '0.25', '0.95', '111.00', '222.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-14 02:20:01', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
