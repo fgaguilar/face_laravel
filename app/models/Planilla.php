@@ -45,7 +45,9 @@ class Planilla extends \Eloquent {
 		'impuestoTotalSusSus',
 		'impuestoTotalBsSus',
 		'puertoDestino',
-		'paisDestino'
+		'paisDestino',
+		'created_by',
+		'updated_by'
       );
       public function factura(){
             return $this->hasOne('Factura');
