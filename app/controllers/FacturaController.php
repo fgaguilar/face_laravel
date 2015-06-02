@@ -49,9 +49,9 @@ class FacturaController extends \BaseController {
     $input["control"]=$codigo;
     $input["autorizacion"]=$dosificacion->autorizacion;
     $input["vencimiento"]=$dosificacion->vencimiento;
-    $input["literal1"]=$CodigoControl->numtoletras($input["baseTotalSus"],"Sus");
-    $input["literal2"]=$CodigoControl->numtoletras($input["baseDiferenciaSus"],"Sus");
-    $input["literal3"]=$CodigoControl->numtoletras($input["baseDiferenciaBs"],"Bs");
+    $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
+    $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
+    $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
     $Factura = Factura::create($input);
     return Response::json($Factura);
   }
