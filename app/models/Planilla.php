@@ -47,7 +47,14 @@ class Planilla extends \Eloquent {
 		'puertoDestino',
 		'paisDestino',
 		'created_by',
-		'updated_by'
+		'updated_by',
+		'nrotramitesin',
+		'nroinerm',
+		'fechahora',
+		'nroboletabanco',
+		'nroinermvalidado',
+		'nroid',
+		'nroordenform3007'
       );
       public function factura(){
             return $this->hasOne('Factura');
