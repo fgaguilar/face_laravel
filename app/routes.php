@@ -4,6 +4,8 @@ Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('planillas', 'PlanillaController',
       ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('plancalculos', 'PlancalculoController',
+      ['only'=>['index','store','show','update','destroy']]);
     Route::resource('planillasTipo', 'PlanillaTipoController',
       ['only'=>['show','index']]);
     Route::resource('codigos', 'CodigoControlController',
