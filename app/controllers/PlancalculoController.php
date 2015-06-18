@@ -44,10 +44,13 @@ class PlancalculoController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($planillaId)
 	{
-		$node = Plancalculo::find($id);
-		return Response::json($node);
+		$node = Plancalculo::where('planilla_id', $planillaId)->get();
+    	return Response::json($node);
+
+		/*$node = Plancalculo::find($id);
+		return Response::json($node);*/
 	}
 
 

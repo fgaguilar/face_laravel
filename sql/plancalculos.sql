@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2015-06-17 15:36:53
+Date: 2015-06-18 09:29:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,7 +20,9 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `plancalculos`;
 CREATE TABLE `plancalculos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `planilla` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `planilla_id` int(11) unsigned NOT NULL,
   `v7` double(18,2) NOT NULL,
   `d4` double(18,2) NOT NULL,
   `v6` double(18,2) NOT NULL,
@@ -89,9 +91,8 @@ CREATE TABLE `plancalculos` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of plancalculos
 -- ----------------------------
-INSERT INTO `plancalculos` VALUES ('0', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '11.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '2015-06-17 19:35:02', '2015-06-17 19:35:02');
