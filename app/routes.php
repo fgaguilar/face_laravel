@@ -17,6 +17,10 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('dosificaciones', 'dosificacioneController',
       ['only'=>['index','store','show','update','destroy']]);          
     Route::get('factura/{id}','FacturaController@factura');
+    Route::resource('paises', 'paiseController',
+      ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('puertos', 'puertoController',
+      ['only'=>['index','store','show','update','destroy']]);
 });
 
 Route::group(array('prefix' => 'service'), function() {
