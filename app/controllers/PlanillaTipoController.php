@@ -17,7 +17,5 @@ class PlanillaTipoController extends \BaseController {
 	{
 		$node = Planilla::where('planilla', $tipo)->get();
     	return Response::json($node);
-    /*$node = Planilla::where('pesoLoteFactores', $tipo)->get();
-    return Response::json($node);*/
 	}
 }

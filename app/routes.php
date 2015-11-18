@@ -20,7 +20,9 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('paises', 'paiseController',
       ['only'=>['index','store','show','update','destroy']]);
     Route::resource('puertos', 'puertoController',
-      ['only'=>['index','store','show','update','destroy']]);
+      ['only'=>['index','store','show','show2','update','destroy']]);
+    Route::resource('puertoPais', 'PaisPuertoController',
+      ['only'=>['show','index']]);
 });
 
 Route::group(array('prefix' => 'service'), function() {
