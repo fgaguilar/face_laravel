@@ -24,6 +24,10 @@ class parametro extends \Eloquent {
 		'origen',
 		'concentrado',
 		'partida1',
-		'partida2'
+		'partida2',
+		'ubicacion',
+		'telefono',
+		'fax',
+		'version'
 		);
 }
