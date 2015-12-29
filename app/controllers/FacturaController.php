@@ -59,6 +59,8 @@ class FacturaController extends \BaseController {
     $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
     $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
     $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
+    $input["monto"]=$trunc;
+    $input["clave"]=$dosificacion->clave;
     $Factura = Factura::create($input);
     return Response::json($Factura);
   }
@@ -124,7 +126,8 @@ class FacturaController extends \BaseController {
     $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
     $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
     $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
-    //$Factura = Factura::create($input);
+    $input["monto"]=$trunc;
+    $input["clave"]=$dosificacion->clave;
     $Factura = Factura::find($id)->update($input);
     return Response::json($Factura);
   }

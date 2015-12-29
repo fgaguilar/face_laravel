@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2015-04-06 10:50:58
+Date: 2015-12-29 09:53:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -46,14 +46,18 @@ CREATE TABLE `parametros` (
   `concentrado` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `partida1` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `partida2` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `ubicacion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `telefono` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fax` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `version` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of parametros
 -- ----------------------------
-INSERT INTO `parametros` VALUES ('1', 'ZINC', '9.18', '1.01', '52.55', '466.00', '0.25', '0.95', '1.00', '1.00', '6.96', '6.96', 'ANTWERP', 'BELGICA', '2.2046223', '32.15073', '32.00', 'FIDEL AGUILAR', 'CASIMIRO CORRAL', 'ARTPOR', 'DESCONOCIDO', '0000-00-00 00:00:00', '2015-04-06 13:12:02', 'Zinc-Plata', '2608.00.00.00', '2616.10.00.00');
-INSERT INTO `parametros` VALUES ('2', 'PLOMO', '6.61', '1.01', '65.02', '2786.00', '0.25', '0.99', '1.00', '1.00', '6.96', '6.96', 'ONSAN', 'KOREA', '2.2046223', '32.15000', '32.00', 'FIDEL AGUILAR', 'POSNASKY 521', 'ONSAN', 'POTOSI - BOLIVIA', '2015-03-02 04:38:34', '2015-04-06 12:39:36', 'PLOMO-PLATA', '2145.00.00.11', '2146.00.00.00');
+INSERT INTO `parametros` VALUES ('1', 'ZINC', '0.00', '1.00', '0.00', '0.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '0', '0', '1.0000000', '1.00000', '1.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '2015-12-21 12:41:22', '0', '0', '0', null, null, null, null);
+INSERT INTO `parametros` VALUES ('2', 'PLOMO', '0.00', '2.00', '0.00', '0.00', '2.00', '2.00', '2.00', '2.00', '2.00', '2.00', '0', '0', '2.0000000', '2.00000', '2.00', '0', '0', '0', '0', '2015-03-02 04:38:34', '2015-12-21 12:41:45', '0', '0', '0', null, null, null, null);
 DROP TRIGGER IF EXISTS `trg_historico`;
 DELIMITER ;;
 CREATE TRIGGER `trg_historico` AFTER UPDATE ON `parametros` FOR EACH ROW insert into parametros_hist values (

@@ -44,7 +44,9 @@ class Factura extends \Eloquent {
             'baseDiferenciaBs',
             'literal3',
             'created_by',
-            'updated_by'
+            'updated_by',
+            'monto',
+            'clave'
       );
       public function planilla(){
             return $this->belongsTo ('Planilla');
