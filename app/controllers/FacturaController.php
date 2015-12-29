@@ -37,7 +37,6 @@ class FacturaController extends \BaseController {
     $dosificacion = Dosificacione::find(1);
     $fecha = str_replace("-","",$input["fecha"]);
     $fecha = substr($fecha,0,8);
-    //$trunc = (int)$input["baseDiferenciaSus"];
     $trunc = str_replace(',', '.', $input["baseDiferenciaSus"]);
     $trunc = round($trunc, 0);
     $CodigoControl = new CodigoControl(
@@ -48,7 +47,12 @@ class FacturaController extends \BaseController {
       $trunc,
       $dosificacion->clave
     );
-    $codigo = $CodigoControl->generar();
+
+    do
+    {
+      $codigo = $CodigoControl->generar();
+    } while (strlen($codigo)>15);    
+
     $input["control"]=$codigo;
     $input["autorizacion"]=$dosificacion->autorizacion;
     $input["vencimiento"]=$dosificacion->vencimiento;
@@ -108,7 +112,12 @@ class FacturaController extends \BaseController {
       $trunc,
       $dosificacion->clave
     );
-    $codigo = $CodigoControl->generar();
+
+    do
+    {
+      $codigo = $CodigoControl->generar();
+    } while (strlen($codigo)>15); 
+    
     $input["control"]=$codigo;
     $input["autorizacion"]=$dosificacion->autorizacion;
     $input["vencimiento"]=$dosificacion->vencimiento;

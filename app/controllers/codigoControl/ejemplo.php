@@ -58,3 +58,4 @@ $CodigoControl = new CodigoControl(
 	);
 echo $CodigoControl->generar().'<br/>';
 ?>
+
