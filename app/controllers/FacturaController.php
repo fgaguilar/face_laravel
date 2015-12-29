@@ -35,8 +35,11 @@ class FacturaController extends \BaseController {
     $input = Input::all();
 
     $dosificacion = Dosificacione::find(1);
-    $fecha=str_replace("-","",$input["fecha"]);
-    $trunc = (int)$input["baseDiferenciaSus"];
+    $fecha = str_replace("-","",$input["fecha"]);
+    $fecha = substr($fecha,0,8);
+    //$trunc = (int)$input["baseDiferenciaSus"];
+    $trunc = str_replace(',', '.', $input["baseDiferenciaSus"]);
+    $trunc = round($trunc, 0);
     $CodigoControl = new CodigoControl(
       $dosificacion->autorizacion,
       $input["factura"],
@@ -91,8 +94,30 @@ class FacturaController extends \BaseController {
   public function update($id)
   {
     $input = Input::all();
-    $node = Factura::find($id)->update($input);
-    return Response::json($node);
+    $dosificacion = Dosificacione::find(1);
+    $fecha = str_replace("-","",$input["fecha"]);
+    $fecha = substr($fecha,0,8);
+    //$trunc = (int)$input["baseDiferenciaSus"];
+    $trunc = str_replace(',', '.', $input["baseDiferenciaSus"]);
+    $trunc = round($trunc, 0);
+    $CodigoControl = new CodigoControl(
+      $dosificacion->autorizacion,
+      $input["factura"],
+      $input["nit"],
+      $fecha,
+      $trunc,
+      $dosificacion->clave
+    );
+    $codigo = $CodigoControl->generar();
+    $input["control"]=$codigo;
+    $input["autorizacion"]=$dosificacion->autorizacion;
+    $input["vencimiento"]=$dosificacion->vencimiento;
+    $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
+    $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
+    $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
+    //$Factura = Factura::create($input);
+    $Factura = Factura::find($id)->update($input);
+    return Response::json($Factura);
   }
 
 
@@ -132,7 +157,8 @@ class FacturaController extends \BaseController {
   public function factura($id)
   {
     //$node = Factura::where('planilla_id', $id)->get(array('id', 'planilla_id'));
-    $node = Factura::where('planilla_id', $id)->get(array('id','planilla_id'));
+    $node = Factura::where('planilla_id', $id)->get();
+    //->get(array('id','planilla_id'));
     /*var_dump($node);
     die;*/
     return Response::json($node);

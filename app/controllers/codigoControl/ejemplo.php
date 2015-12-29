@@ -2,7 +2,7 @@
 require_once('codigo_control.class.php');
 
 // Ejemplo de generacion
-$CodigoControl = new CodigoControl(
+/*$CodigoControl = new CodigoControl(
 	'29040011007',
 	'1503',
 	'4189179011',
@@ -47,14 +47,14 @@ $CodigoControl = new CodigoControl(
 	'451',
 	'DSrCB7Ssdfv4X29d)5k7N%3ab8p3S(asFG5YU8477SWW)FDAQA'
 	);
-echo $CodigoControl->generar().'<br/>';
+echo $CodigoControl->generar().'<br/>';*/
 $CodigoControl = new CodigoControl(
-	'30040010595',
-	'10015',
-	'953387014',
-	'20070825',
-	'5726',
-	'33E265B43C4435sdTuyBVssD355FC4A6F46sdQWasdA)d56666fDsmp9846636B3'
+	'29040011007',
+	'36',
+	'0',
+	'20160103',
+	'70813',
+	'9rCB7Sv4X29d)5k7N%3ab89p-3(5[A'
 	);
 echo $CodigoControl->generar().'<br/>';
 ?>

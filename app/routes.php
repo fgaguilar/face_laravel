@@ -12,6 +12,8 @@ Route::group(array('prefix' => 'api'), function()
       ['only'=>['show','index']]);    
     Route::resource('facturas', 'FacturaController',
       ['only'=>['index','store','show','update','destroy']]);
+    Route::resource('facturasSin', 'FacturaSinController',
+      ['only'=>['index','store','show','update','destroy']]);
     Route::resource('parametros', 'parametroController',
       ['only'=>['index','store','show','update','destroy']]);
     Route::resource('dosificaciones', 'dosificacioneController',
