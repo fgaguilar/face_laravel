@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2015-12-29 09:53:17
+Date: 2015-12-29 11:06:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,14 +50,15 @@ CREATE TABLE `parametros` (
   `telefono` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fax` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `version` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fleteInterno` double(15,3) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of parametros
 -- ----------------------------
-INSERT INTO `parametros` VALUES ('1', 'ZINC', '0.00', '1.00', '0.00', '0.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '0', '0', '1.0000000', '1.00000', '1.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '2015-12-21 12:41:22', '0', '0', '0', null, null, null, null);
-INSERT INTO `parametros` VALUES ('2', 'PLOMO', '0.00', '2.00', '0.00', '0.00', '2.00', '2.00', '2.00', '2.00', '2.00', '2.00', '0', '0', '2.0000000', '2.00000', '2.00', '0', '0', '0', '0', '2015-03-02 04:38:34', '2015-12-21 12:41:45', '0', '0', '0', null, null, null, null);
+INSERT INTO `parametros` VALUES ('1', 'ZINC', '0.00', '1.00', '0.00', '0.00', '10.00', '10.00', '10.00', '10.00', '1.00', '1.00', '0', '0', '1.0000000', '1.00000', '1.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '2015-12-29 15:06:25', '0', '0', '0', 'uuuuu', '22222', '22221', '1', '888.000');
+INSERT INTO `parametros` VALUES ('2', 'PLOMO', '0.00', '2.00', '0.00', '0.00', '20.00', '20.00', '20.00', '20.00', '2.00', '2.00', '0', '0', '2.0000000', '2.00000', '2.00', '1', '1', '1', '1', '2015-03-02 04:38:34', '2015-12-29 15:06:25', '1', '1', '1', null, null, null, null, '777.000');
 DROP TRIGGER IF EXISTS `trg_historico`;
 DELIMITER ;;
 CREATE TRIGGER `trg_historico` AFTER UPDATE ON `parametros` FOR EACH ROW insert into parametros_hist values (

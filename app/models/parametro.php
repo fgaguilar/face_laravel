@@ -28,6 +28,7 @@ class parametro extends \Eloquent {
 		'ubicacion',
 		'telefono',
 		'fax',
-		'version'
+		'version',
+		'fleteInterno'
 		);
 }
