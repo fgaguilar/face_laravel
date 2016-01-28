@@ -33,6 +33,9 @@ class FacturaSinController extends \BaseController {
 	{
 		$input = Input::all();
 		$FacturaSin = Factura::create($input);
+        $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
+        $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
+        $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
 		return Response::json($FacturaSin);
 	}
 
