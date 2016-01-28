@@ -31,12 +31,28 @@ class FacturaSinController extends \BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::all();
+
+	    $input = Input::all();
+
+	    $dosificacion = Dosificacione::find(1);
+	    $fecha = str_replace("-","",$input["fecha"]);
+	    $fecha = substr($fecha,0,8);
+	    $trunc = str_replace(',', '.', $input["baseDiferenciaBs"]);
+	    $trunc = round($trunc, 0);
+	    $CodigoControl = new CodigoControl(
+	      $dosificacion->autorizacion,
+	      $input["factura"],
+	      $input["nit"],
+	      $fecha,
+	      $trunc,
+	      $dosificacion->clave
+	    );
+
+	    $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
+	    $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
+	    $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
 		$FacturaSin = Factura::create($input);
-        $input["literal1"]=$CodigoControl->numaletras(round($input["baseTotalSus"],2));
-        $input["literal2"]=$CodigoControl->numaletras(round($input["baseDiferenciaSus"],2));
-        $input["literal3"]=$CodigoControl->numaletras(round($input["baseDiferenciaBs"],2));
-		return Response::json($FacturaSin);
+		return Response::json($FacturaSin);		
 	}
 
 
